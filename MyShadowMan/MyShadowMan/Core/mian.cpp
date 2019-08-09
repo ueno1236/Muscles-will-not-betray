@@ -7,7 +7,7 @@ int WINAPI WinMain(
 	LPSTR lpCmdLine,
 	INT nCmdShow) {
 
-	if (InitCore(hInstance, "Swadow Man", 1280, 960) == FALSE)
+	if (InitCore(hInstance, "Swadow Man", 1980, 1020) == FALSE)
 	{
 		return 0;
 	}
@@ -32,6 +32,6 @@ int WINAPI WinMain(
 			}
 		}
 
-
 	return 0;
+
 };

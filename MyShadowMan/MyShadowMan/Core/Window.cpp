@@ -27,7 +27,7 @@ void WindowSettings(HINSTANCE hInstance, CONST CHAR* WindowName, int WindowWidth
 	windowclass.style = CS_HREDRAW | CS_VREDRAW;
 	windowclass.hIcon = NULL;
 	windowclass.hIconSm = NULL;
-	windowclass.hCursor = LoadCursor(NULL, IDC_CROSS);
+	windowclass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	windowclass.lpszMenuName = NULL;
 	windowclass.cbClsExtra = 0;
 	windowclass.cbWndExtra = 0;
@@ -35,8 +35,18 @@ void WindowSettings(HINSTANCE hInstance, CONST CHAR* WindowName, int WindowWidth
 
 	RegisterClassEx(&windowclass);
 
-	*hWnd = CreateWindow(WindowName, WindowName, WS_OVERLAPPEDWINDOW,
-		0, 0, WindowWidth, WindowHeight, NULL, NULL, hInstance, NULL);
+	*hWnd = CreateWindow(
+		WindowName, 
+		WindowName, 
+		WS_VISIBLE||WS_POPUP,
+		0, 
+		0, 
+		WindowWidth, 
+		WindowHeight, 
+		NULL, 
+		NULL, 
+		hInstance, 
+		NULL);
 
 	ShowWindow(*hWnd, SW_SHOW);
 	UpdateWindow(*hWnd);
